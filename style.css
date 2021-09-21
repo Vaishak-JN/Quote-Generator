@@ -18,15 +18,15 @@ body {
 #container {
   display: block;
   width: 50%;
-  height: 50vh;
+  height: 60vh;
   padding: 40px;
-  margin: 40px;
+  margin: 30px;
   border-radius: 30px;
   transition: 0.5s;
 }
 h1 {
   justify-self: flex-start;
-  margin: 50px;
+  margin-top: 40px;
   color: whitesmoke;
   font-size: 60px;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
@@ -44,7 +44,7 @@ h1 {
 p {
   color: whitesmoke;
   transition: 0.5s;
-  margin-bottom: 30px;
+  margin-bottom: 25px;
   font-size: 30px;
 }
 @media screen and (max-width: 1000px) {
@@ -56,11 +56,11 @@ p {
     border-radius: 30px;
   }
   h1 {
-    margin: 30px;
+    margin-top: 30px;
     font-size: 40px;
   }
   p {
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     font-size: 30px;
   }
 }
