@@ -15,10 +15,11 @@ body {
   flex-direction: column;
   transition: 2s;
 }
-#container {
+.container {
   display: block;
   width: 50%;
   height: 60vh;
+  /* max-height: auto; */
   padding: 30px;
   margin: 30px;
   border-radius: 30px;
@@ -33,11 +34,11 @@ h1 {
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   text-decoration: underline;
 }
-#quote {
+.quote {
   text-align: justify;
   font-style: italic;
 }
-#author {
+.author {
   text-align: right;
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
 }
@@ -48,7 +49,7 @@ p {
   font-size: 30px;
 }
 @media screen and (max-width: 1000px) {
-  #container {
+  .container {
     width: 80%;
     height: 50vh;
     padding: 50px;
@@ -65,7 +66,7 @@ p {
   }
 }
 @media screen and (max-width: 600px) {
-  #container {
+  .container {
     width: 90%;
     height: 60vh;
     padding: 15px;
