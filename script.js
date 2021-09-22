@@ -8,16 +8,16 @@ let count=1;
 
 // declare p tags for quote and author and append to container
 var para1=document.createElement("p");
-para1.setAttribute("id","quote")
-document.getElementById("container").append(para1)
+para1.setAttribute("class","quote")
+document.querySelector(".container").append(para1)
 var para2=document.createElement("p");
-para2.setAttribute("id","author")
-document.getElementById("container").append(para2)
+para2.setAttribute("class","author")
+document.querySelector(".container").append(para2)
 
 
 // create function for generating quote and changing it periodically
 function quoteGenerator(){
-     setInterval(() => {
+    setInterval(() => {
         fetch("https://favqs.com/api/qotd")
         .then(response=>response.json())
         .then(data=>{
@@ -29,7 +29,7 @@ function quoteGenerator(){
             if(count===bodyColor.length){
                 count=0;
                 document.body.style.backgroundColor=bodyColor[count];
-                let container=document.getElementById("container");
+                let container=document.querySelector(".container");
                 container.style.backgroundColor=containerColor[count]
                 count+=1;
 
@@ -37,7 +37,7 @@ function quoteGenerator(){
                 para2.innerText="- "+data.quote.author
             }else{
                 document.body.style.backgroundColor=bodyColor[count];
-                let container=document.getElementById("container");
+                let container=document.querySelector(".container");
                 container.style.backgroundColor=containerColor[count]
                 count+=1;
 
@@ -46,7 +46,7 @@ function quoteGenerator(){
             }
         })
         .catch(err=>console.log(err,"error"))
-     }, 7000);
+    }, 7000);
 }
 // function for first quote to be displayed on page loading
 // to compensate for initial delay due setInterval()
@@ -55,7 +55,7 @@ function firstQuote(){
         .then(response=>response.json())
         .then(data=>{
             document.body.style.backgroundColor=bodyColor[0];
-            let container=document.getElementById("container");
+            let container=document.querySelector(".container");
             container.style.backgroundColor=containerColor[0]
 
             para1.innerText=data.quote.body
@@ -80,11 +80,11 @@ document.onload=quoteGenerator();
 
 // // declare p tags for quote and author and append to container
 // var para1=document.createElement("p");
-// para1.setAttribute("id","quote")
-// document.getElementById("container").append(para1)
+// para1.setAttribute("class","quote")
+// document.querySelector(".container").append(para1)
 // var para2=document.createElement("p");
-// para2.setAttribute("id","author")
-// document.getElementById("container").append(para2)
+// para2.setAttribute("class","author")
+// document.querySelector(".container").append(para2)
 
 // // load both functions on page loading
 
@@ -97,12 +97,12 @@ document.onload=quoteGenerator();
 //     let data= await quotes.json()
 
 //         try{
-//             document.body.style.backgroundColor=bodyColor[0];
-//             let container=document.getElementById("container");
-//             container.style.backgroundColor=containerColor[0]
+//                 document.body.style.backgroundColor=bodyColor[0];
+//                 let container=document.querySelector(".container");
+//                 container.style.backgroundColor=containerColor[0]
 
-//             para1.innerText=data.quote.body
-//             para2.innerText="- "+data.quote.author
+//                 para1.innerText=data.quote.body
+//                 para2.innerText="- "+data.quote.author
 //         }catch(err){
 //             console.log(err,"error")
 //         }
@@ -121,24 +121,24 @@ document.onload=quoteGenerator();
 //         console.log(data.quote.author)
         
 //         // to change colors
-//         if(count===bodyColor.length){
-//             count=0;
-//             document.body.style.backgroundColor=bodyColor[count];
-//             let container=document.getElementById("container");
-//             container.style.backgroundColor=containerColor[count]
-//             count+=1;
+//             if(count===bodyColor.length){
+//                 count=0;
+//                 document.body.style.backgroundColor=bodyColor[count];
+//                 let container=document.querySelector(".container");
+//                 container.style.backgroundColor=containerColor[count]
+//                 count+=1;
 
-//             para1.innerText=data.quote.body
-//             para2.innerText="- "+data.quote.author
-//         }else{
-//             document.body.style.backgroundColor=bodyColor[count];
-//             let container=document.getElementById("container");
-//             container.style.backgroundColor=containerColor[count]
-//             count+=1;
+//                 para1.innerText=data.quote.body
+//                 para2.innerText="- "+data.quote.author
+//             }else{
+//                 document.body.style.backgroundColor=bodyColor[count];
+//                 let container=document.querySelector(".container");
+//                 container.style.backgroundColor=containerColor[count]
+//                 count+=1;
 
-//             para1.innerText=data.quote.body
-//             para2.innerText="- "+data.quote.author
-//         }
+//                 para1.innerText=data.quote.body
+//                 para2.innerText="- "+data.quote.author
+//             }
         
 //     }catch(err){
 //             console.log(err,"error")
